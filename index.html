@@ -31,15 +31,18 @@
       <h1>Generate a <br /><span>Random Password</span></h1>
       <div class="main">
         <div class="display">
-            <input type="text" id="password" placeholder="Password" />
-            <img src="copy.png" alt="" onclick="copyPassword()" />
-        </div>
-        <div class="length">
-          <h4>Enter the length of password</h4>
-          <input type="text" id="password-length" placeholder="" />
+            <input type="text" id="password" placeholder="Password">
+            <img src="./images/copy.png" alt="" onclick="copyPassword()">
         </div>
 
-      </div>
+        <!-- Added a slider to select the length of password -->
+        <div class="slider">
+            <input type="range" id="lengthSlider" min="6" max="30" value="12" oninput="updatePasswordLength()">
+            <span id="lengthDisplay">12</span> characters
+        </div>
+
+        <button onclick="createPassword()"><img src="./images/generate.png" alt="" >Generate Password</button>
+
     </div>
     <button onclick="createPassword()">
       <img src="generate.png" alt="" />Generate Password

@@ -1,33 +1,32 @@
 const passwordBox = document.getElementById("password");
-const lengthInput = document.getElementById("password-length");
+let length = 12;
+const charset =
+	"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]:;?><,./-="; // Include all characters you want to use
 
-const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const lowerCase = "abcdefghijklmnopqrstuvwxyz";
-const number = "0123456789";
-const symbol = "!@#$%^&*()_+~<>?{}";
-const allChars = upperCase + lowerCase + number + symbol;
-
+// Function to generate a random password
 function createPassword() {
-  let length = lengthInput.value; // Get the length from the input field
-  if (length === "") {
-    length = 10; // Default password length if not entered
-  } else {
-    length = parseInt(length); // Convert to integer
-  }
-
-  let password = "";
-  password += upperCase[Math.floor(Math.random() * upperCase.length)];
-  password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
-  password += number[Math.floor(Math.random() * number.length)];
-  password += symbol[Math.floor(Math.random() * symbol.length)];
-
-  while (length > password.length) {
-    password += allChars[Math.floor(Math.random() * allChars.length)];
-  }
-  passwordBox.value = password;
+	let password = "";
+	for (let i = 0; i < length; i++) {
+		const randomIndex = Math.floor(Math.random() * charset.length);
+		password += charset[randomIndex];
+	}
+	passwordBox.value = password;
 }
 
+// Function to copy the generated password to the clipboard
 function copyPassword() {
-  passwordBox.select();
-  document.execCommand("copy");
+	if (passwordBox.value !== "") {
+		passwordBox.select();
+		document.execCommand("copy");
+	} else {
+		alert("No password to copy!");
+	}
 }
+
+// Function to update the length of the generated password based on the slider value
+function updatePasswordLength() {
+	length = document.getElementById("lengthSlider").value;
+	document.getElementById("lengthDisplay").textContent = length;
+}
+
+
