@@ -1,5 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Generate Random Password</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Generate a <br /><span>Random Password</span></h1>
+    <div class="main">
+      <div class="display">
+        <input type="text" id="password" placeholder="Password" />
+        <img src="copy.png" alt="" onclick="copyPassword()" />
+      </div>
+      <div class="length">
+        <h4>Enter the length of password</h4>
+        <input type="text" id="password-length" placeholder="" />
+
   <head>
     
     <meta charset="UTF-8" />
@@ -19,13 +38,14 @@
           <h4>Enter the length of password</h4>
           <input type="text" id="password-length" placeholder="" />
         </div>
-      </div>
-      
-      <button onclick="createPassword()">
-        <img src="generate.png" alt="" />Generate Password
-      </button>
-    </div>
 
-    <script src="script.js"></script>
-  </body>
+      </div>
+    </div>
+    <button onclick="createPassword()">
+      <img src="generate.png" alt="" />Generate Password
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
