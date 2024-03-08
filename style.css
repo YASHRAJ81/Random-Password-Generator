@@ -46,6 +46,7 @@ body {
   border: 0;
   outline: 0;
   font-size: 24px;
+  width: 25rem;
 }
 
 .container button img {
@@ -58,10 +59,52 @@ body {
   background: #019f55;
   color: #fff;
   font-weight: 300;
+  font-size: 1.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px 26px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.slider{
+  margin: 2rem 0 2rem ;
+}
+
+/* Added media queries for different screen sizes */
+@media screen and (max-width : 425px) {
+  .container{
+    margin-left: 1rem;
+  }
+  .display input{
+    width: 18rem;
+  }
+}
+
+@media screen and (max-width : 375px) {
+  .container h1{
+    font-size: 2.6rem;
+  }
+  .display input{
+    width: 15rem;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .display {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+  }
+
+  .display img {
+    margin-top: 10px; 
+  }
+
+  .display input {
+    width: 80%; 
+    font-size: 14px; 
+  }
 }
