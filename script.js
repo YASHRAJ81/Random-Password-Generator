@@ -29,3 +29,4 @@ function updatePasswordLength() {
 	document.getElementById("lengthDisplay").textContent = length;
 }
 
+
