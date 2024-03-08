@@ -3,6 +3,6 @@ This is the project that helps you to generate quick random password whenever ne
 
 ## Screenshot
 
-![](screenshot.png)
+![](./images/screenshot.png)
 
 
